@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sort the Tiles</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/fontawesome/css/font-awesome.min.css">
+    </head>
+    <body id="body">
+
+        <div id="game" >
+            <div class="fa fa-refresh" id="shuffle-button" data-bind="click: shuffle" ></div>
+            <div data-bind="if: solved" >
+                <div id="twtbox"></div> 
+            </div>
+            <div id="best" >
+                <span class="display-title" >BEST</span>
+                <span class="display-text" data-bind="text: best"></span>
+            </div>
+            <div id="moves" >
+                <span class="display-title" >MOVES</span>
+                <span class="display-text" data-bind="text: moves"></span>
+            </div>
+
+            <div class="with-image" id="grid" 
+                 data-bind="foreach: tiles, css: {'with-image': solved}">
+                <!-- ko ifnot: $parent.solved() -->
+                <div class="tile with-image" data-bind="text: p, css: 'tile-position-'+ (y()+1) +'-'+(x()+1), attr: { id: 'tile-'+ p()}, click: $parent.move"></div>
+                <!-- /ko -->
+            </div>
+            <div id="hurray" class="animated" data-bind="text: 'Hooray!', visible:solved, css: {bounceInUp: solved, fadeOut: !solved}"></div>
+
+        </div>
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        <script>   
+        window.twttr = (function(d, s, id) {
+        var t, js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        return window.twttr || (t = {
+            _e: [],
+            ready: function(f) {
+                t._e.push(f);
+            }
+        });
+    }(document, "script", "twitter-wjs"));
+        </script>
+        <script type="text/javascript" src="bck2brwsr.js"></script>
+        <script>
+            var vm = bck2brwsr('fifteen.js');
+            var c = vm.loadClass('com.dukescript.fifteen.Main');
+            c.invoke('onPageLoad');
+        </script>
+    </body>
+</html>
