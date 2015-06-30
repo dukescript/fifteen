@@ -111,12 +111,7 @@
             <groupId>com.dukescript.fifteen</groupId>
             <artifactId>fifteenpuzzle</artifactId>
             <version>${project.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.netbeans.html</groupId>
-                    <artifactId>net.java.html.boot.fx</artifactId>
-                </exclusion>
-            </exclusions>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.netbeans.html</groupId>
@@ -128,6 +123,7 @@
                     <groupId>org.ow2.asm</groupId>
                 </exclusion>
             </exclusions>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.teavm</groupId>
@@ -139,20 +135,6 @@
             <groupId>org.teavm</groupId>
             <artifactId>teavm-html4j</artifactId>
             <version>${teavm.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apidesign.bck2brwsr</groupId>
-            <artifactId>emul</artifactId>
-            <version>0.13</version>
-            <classifier>bck2brwsr</classifier>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apidesign.bck2brwsr</groupId>
-            <artifactId>ko-bck2brwsr</artifactId>
-            <version>0.13</version>
-            <classifier>bck2brwsr</classifier>
             <scope>provided</scope>
         </dependency>
         <dependency>

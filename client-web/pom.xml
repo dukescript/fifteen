@@ -131,7 +131,12 @@
             <groupId>com.dukescript.fifteen</groupId>
             <artifactId>fifteenpuzzle</artifactId>
             <version>${project.version}</version>
-            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.netbeans.html</groupId>
+                    <artifactId>net.java.html.boot.fx</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apidesign.bck2brwsr</groupId>
@@ -162,12 +167,6 @@
             <artifactId>ko-bck2brwsr</artifactId>
             <version>0.13</version>
             <classifier>bck2brwsr</classifier>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.netbeans.html</groupId>
-            <artifactId>ko4j</artifactId>
-            <version>1.1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
