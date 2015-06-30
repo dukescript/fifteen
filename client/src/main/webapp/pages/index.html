@@ -51,9 +51,13 @@
         </script>
         <script type="text/javascript" src="bck2brwsr.js"></script>
         <script>
-            var vm = bck2brwsr('fifteen.js');
-            var c = vm.loadClass('com.dukescript.fifteen.Main');
-            c.invoke('onPageLoad');
+            if ("main" in window) {
+                main();
+            } else {
+                var vm = bck2brwsr('fifteen.js');
+                var c = vm.loadClass('com.dukescript.fifteen.Main');
+                c.invoke('onPageLoad');
+            }
         </script>
     </body>
 </html>

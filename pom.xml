@@ -30,6 +30,7 @@
     <modules>
         <module>client</module>
         <module>client-web</module>
+        <module>client-teavm</module>
         <module>client-android</module>
         <module>client-ios</module>
     </modules>
