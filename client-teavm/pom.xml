@@ -13,10 +13,6 @@
     <packaging>war</packaging>
     <name>fifteenpuzzle Client for Web via TeaVM</name>
 
-    <properties>
-      <teavm.version>0.3.0</teavm.version>
-    </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -92,12 +88,11 @@
                             <mainClass>com.dukescript.fifteen.fifteenpuzzle.TeaVMMain</mainClass>
                             <targetFileName>bck2brwsr.js</targetFileName>
                             <runtime>MERGED</runtime>
-                            <minifying>false</minifying>
+                            <minifying>true</minifying>
                             <debugInformationGenerated>true</debugInformationGenerated>
                             <sourceMapsGenerated>true</sourceMapsGenerated>
                             <sourceFilesCopied>true</sourceFilesCopied>
                             <transformers>
-                              <transformer>com.dukescript.fifteen.fifteenpuzzle.LoggerHack</transformer>
                               <transformer>org.teavm.javascript.NullPointerExceptionTransformer</transformer>
                             </transformers>
                         </configuration>
