@@ -18,7 +18,7 @@
 
     <properties>
         <platform.version>4.1.1.4</platform.version>
-        <android.plugin.version>4.1.0</android.plugin.version>
+        <android.plugin.version>4.2.0</android.plugin.version>
         <android.platform.version>19</android.platform.version>
         <debug>false</debug>
     </properties>
