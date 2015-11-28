@@ -13,6 +13,7 @@ import net.java.html.boot.BrowserBuilder;
 import net.java.html.json.Models;
 
 public final class Main {
+    private static Game game;
 
     private Main() {
     }
@@ -26,8 +27,48 @@ public final class Main {
         System.exit(0);
     }
 
-   public static void onPageLoad() {
-       ViewModel.onPageLoad();
-   }
+    /**
+     * Called when the page is ready.
+     */
+    public static void onPageLoad() {
+         game = initGame();
+        String test = StorageManager.getStorage().get("fifteen");
+        if (test != null && !test.isEmpty() && !test.equals("undefined")) {
+            Logger.getLogger(Main.class.getName()).log(Level.INFO, "Test:" + test + "<");
+            InputStream inputStream = new ByteArrayInputStream(test.getBytes());
+            try {
+                game.clone();
+                game = Models.parse(BrwsrCtx.findDefault(Game.class), Game.class, inputStream);
+            } catch (IOException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                game = initGame();
+            }
+
+        }
+        Models.applyBindings(game, "game");
+    }
+
+    private static Game initGame() {
+        Logger.getLogger(Main.class.getName()).log(Level.INFO, "init Game!");
+
+        LinkedList<Integer> positions = new LinkedList<>();
+        for (int i = 0; i < 16; i++) {
+            positions.add(i);
+        }
+        Collections.shuffle(positions);
+        while (!ViewModel.isSolveable(positions)) {
+            Collections.shuffle(positions);
+        }
+
+        ArrayList<Tile> tiles = new ArrayList<>();
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                final Integer pos = positions.pop();
+                final Tile tile = new Tile(i, j, pos);
+                tiles.add(tile);
+            }
+        }
+        return new Game(0, 0, false, tiles.toArray(new Tile[16]));
+    }
 
 }
