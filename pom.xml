@@ -27,6 +27,7 @@
           <url>http://bits.netbeans.org/maven2/</url>
       </repository>
     </repositories>
+    
     <modules>
         <module>client</module>
         <module>client-web</module>
@@ -35,7 +36,7 @@
         <module>client-ios</module>
     </modules>
     <properties>
-        <net.java.html.version>1.1</net.java.html.version>
+        <net.java.html.version>1.2.3</net.java.html.version>
         <bck2brwsr.version>0.13</bck2brwsr.version>
         <bck2brwsr.obfuscationlevel>FULL</bck2brwsr.obfuscationlevel>
         <jersey.version>2.13</jersey.version>
@@ -53,7 +54,7 @@
     </dependencyManagement>
     <build>
         <plugins>
-            <plugin>
+<!--            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.3.1</version>
@@ -70,7 +71,7 @@
                         </configuration>
                     </execution>
                 </executions>              
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 </project>

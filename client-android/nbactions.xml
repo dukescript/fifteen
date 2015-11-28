@@ -22,6 +22,8 @@
         </goals>
         <properties>
             <skipTests>true</skipTests>
+            <android.run.debug>${jpda.attach.port}</android.run.debug>
+            <jpda.attach>true</jpda.attach>
         </properties>
     </action>
     <action>
