@@ -78,7 +78,7 @@ public class ViewModel {
                 Collections.shuffle(positions);
             }
         }
-        System.out.println("solveable "+ViewModel.isSolveable(positions));
+
         List<Tile> tiles = game.getTiles();
         for (Tile tile : tiles) {
             for (int i = 0; i < positions.size(); i++) {

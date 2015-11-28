@@ -124,7 +124,7 @@ body {
 
 .tile{
     /*layout*/
-    
+
     position: absolute;
     vertical-align: middle;
     text-align: center;
@@ -136,17 +136,16 @@ body {
     /*animation*/
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
-    -moz-transition:  all 0.2s ease-out;
-    border-radius: 5px;    
+    -moz-transition:  all 0.2s ease-out;  
     background:#A8C0D8;
 }
 
 .tile.with-image{
-       background-image: url(../assets/javaduke_html5.png); 
+    background-image: url(../assets/javaduke_html5.png); 
 }
 
 #grid.with-image{
-       background-image: url(../assets/javaduke_html5.png);   
+    background-image: url(../assets/javaduke_html5.png);   
 }
 
 #grid{
@@ -168,20 +167,14 @@ body {
 
 @media screen and (orientation: landscape){
     #hurray{
-        font-size: 16vh; 
+        font-size: 14vh; 
         margin: 0 auto auto auto;
     }
 
     #shuffle-button{
-        font-size: 8vh;
-        margin-left: 16vh;
-        height: 15vh;
-        width: 15vh;
-        line-height:15vw;
-        background-size: auto;
-        background-image: url(../assets/ic_action_refresh.png);
-        background-repeat: no-repeat;
-        
+        margin-left: 14vh;
+        height: 14vh;
+        width: 14vh;
     }
 
     #moves{
@@ -205,6 +198,12 @@ body {
         height: 65vh;
         background-size: 65vh 65vh;
         margin: auto;
+    }
+
+    .icon {
+        display: inline-block;
+        width: .9em;
+        height: .9em;
     }
 
     .display-title{
@@ -316,25 +315,27 @@ body {
     }
 
     #shuffle-button{
-        font-size: 8vw;
-        margin-left: 16vw;
-        line-height:15vw;
-
+        color: #304860;
+        margin-left: 5vw;
+        height: 12vw;
+        width: 11vw;
     }
 
     #grid{
-        width: 65vw;
-        height: 65vw;
-        margin: 16vw auto;
-
+        width: 89vw;
+        height: 89vw;
+        margin-left: 4vw ;
+        margin-right: 4vw ;
+        margin-top: 5vw ;
+        margin-bottom: 1vw ;
     }
 
     .tile{
-        height: 15vw;
-        width: 15vw;   
-        font-size: 11vw;
-        line-height:15vw;
-
+        height: 21vw;
+        width: 21vw;   
+        font-size: 16vw;
+        line-height:21vw;
+        border-radius: 2vw;  
     }
 
     #moves{
@@ -346,7 +347,7 @@ body {
 
     #best{
         float: right;
-        margin-right: 16vw;
+        margin-right: 4vw;
         height: 15vw;
         width: 15vw;
     }
@@ -358,41 +359,41 @@ body {
 
     .display-title{
         color: #A8A8A8; 
-        font-size: 4vw;
+        font-size: 3.8vw;
     }
 
     .tile.tile-position-1-1 {
         top:1vw; left: 1vw; }
     .tile.tile-position-1-2 {
-        top:1vw; left: 17vw; }
+        top:1vw; left: 23vw; }
     .tile.tile-position-1-3 {
-        top:1vw; left: 33vw; }
+        top:1vw; left: 45vw; }
     .tile.tile-position-1-4 {
-        top:1vw; left: 49vw; }
+        top:1vw; left: 67vw; }
     .tile.tile-position-2-1 {
-        top:17vw; left: 1vw; }
+        top:23vw; left: 1vw; }
     .tile.tile-position-2-2 {
-        top:17vw; left: 17vw; }
+        top:23vw; left: 23vw; }
     .tile.tile-position-2-3 {
-        top:17vw; left: 33vw; }
+        top:23vw; left: 45vw; }
     .tile.tile-position-2-4 {
-        top:17vw; left: 49vw; }
+        top:23vw; left: 67vw; }
     .tile.tile-position-3-1 {
-        top:33vw; left: 1vw; }
+        top:45vw; left: 1vw; }
     .tile.tile-position-3-2 {
-        top:33vw; left: 17vw; }
+        top:45vw; left: 23vw; }
     .tile.tile-position-3-3 {
-        top:33vw; left: 33vw; }
+        top:45vw; left: 45vw; }
     .tile.tile-position-3-4 {
-        top:33vw; left: 49vw; }
+        top:45vw; left: 67vw; }
     .tile.tile-position-4-1 {
-        top:49vw; left: 1vw; }
+        top:67vw; left: 1vw; }
     .tile.tile-position-4-2 {
-        top:49vw; left: 17vw; }
+        top:67vw; left: 23vw; }
     .tile.tile-position-4-3 {
-        top:49vw; left: 33vw; }
+        top:67vw; left: 45vw; }
     .tile.tile-position-4-4 {
-        top:49vw; left: 49vw; }
+        top:67vw; left: 67vw; }
 
     #tile-1{
         background-position: 0vw 0vw;
