@@ -124,6 +124,7 @@ body {
 
 .tile{
     /*layout*/
+    
     position: absolute;
     vertical-align: middle;
     text-align: center;
@@ -177,6 +178,10 @@ body {
         height: 15vh;
         width: 15vh;
         line-height:15vw;
+        background-size: auto;
+        background-image: url(../assets/ic_action_refresh.png);
+        background-repeat: no-repeat;
+        
     }
 
     #moves{
@@ -202,16 +207,17 @@ body {
         margin: auto;
     }
 
+    .display-title{
+        display: block;
+        color: #A8A8A8; 
+        font-size: 3vh;
+    }
 
     .display-text{
         color: #A8A8A8; 
         font-size: 8vh;
     }
 
-    .display-title{
-        color: #A8A8A8; 
-        font-size: 4vh;
-    }
 
     .tile{
         line-height:15vh;

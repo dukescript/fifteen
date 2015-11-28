@@ -5,23 +5,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
         <link rel="stylesheet" href="css/styles.css" />
-        <!--<link rel="stylesheet" href="css/fontawesome/css/font-awesome.min.css">-->
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body id="body">
 
         <div id="game" >
-            <div class="fa fa-refresh" id="shuffle-button" data-bind="click: shuffle" ></div>
-            <div data-bind="if: solved" >
+            <div  id="shuffle-button" data-bind="click: shuffle" ></div>
+<!--            <div data-bind="if: solved" >
                 <div id="twtbox"></div> 
-            </div>
+            </div>-->
             <div id="best" >
-                <span class="display-title" >BEST</span>
+                <span class="display-title" data-bind="text: cheatMode() ? 'BEST:' : 'BEST'"></span>
                 <span class="display-text" data-bind="text: best"></span>
             </div>
             <div id="moves" >
-                <span class="display-title" >MOVES</span>
-                <span class="display-text" data-bind="text: moves"></span>
+                <span class="display-title" data-bind="text:  cheatMode() ? 'MOVES:' : 'MOVES'"></span>
+                <span class="display-text" data-bind="text: moves, click: cheat"></span>
             </div>
 
             <div class="with-image" id="grid" 
@@ -33,7 +31,7 @@
             <div id="hurray" class="animated" data-bind="text: 'Hooray!', visible:solved, css: {bounceInUp: solved, fadeOut: !solved}"></div>
 
         </div>
-        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<!--        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
         <script>   
         window.twttr = (function(d, s, id) {
         var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -49,7 +47,7 @@
             }
         });
     }(document, "script", "twitter-wjs"));
-        </script>
+        </script>-->
         <script type="text/javascript" src="bck2brwsr.js"></script>
         <script>
             if ("main" in window) {

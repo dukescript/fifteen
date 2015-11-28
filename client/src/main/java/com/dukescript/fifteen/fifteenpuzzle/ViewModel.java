@@ -14,9 +14,16 @@ import net.java.html.json.Property;
     @Property(name = "tiles", type = Tile.class, array = true),
     @Property(name = "moves", type = int.class),
     @Property(name = "best", type = int.class),
-    @Property(name = "solved", type = boolean.class),})
+    @Property(name = "solved", type = boolean.class),
+    @Property(name = "cheatMode", type = boolean.class)
+})
 public class ViewModel {
-        
+
+    @Function
+    public static void cheat(Game game) {
+        game.setCheatMode(!game.isCheatMode());
+    }
+
     @Function
     public static void move(Game game, Tile data) {
         if (data.getP() == 0 || game.isSolved()) {
@@ -55,8 +62,6 @@ public class ViewModel {
         throw new IllegalArgumentException("This list doesn't contain an empty Tile");
     }
 
-
-
     @Function
     public static void shuffle(Game game) {
         LinkedList<Integer> positions = new LinkedList<>();
@@ -64,9 +69,16 @@ public class ViewModel {
             positions.add(i);
         }
         Collections.shuffle(positions);
-        while (!ViewModel.isSolveable(positions)) {
-            Collections.shuffle(positions);
+        if (game.isCheatMode()) {
+            while (ViewModel.isSolveable(positions)) {
+                Collections.shuffle(positions);
+            }
+        } else {
+            while (!ViewModel.isSolveable(positions)) {
+                Collections.shuffle(positions);
+            }
         }
+        System.out.println("solveable "+ViewModel.isSolveable(positions));
         List<Tile> tiles = game.getTiles();
         for (Tile tile : tiles) {
             for (int i = 0; i < positions.size(); i++) {
@@ -82,7 +94,6 @@ public class ViewModel {
         StorageManager.getStorage().put("game", game.toString());
     }
 
-  
     @Model(className = "Tile", properties = {
         @Property(name = "x", type = int.class),
         @Property(name = "y", type = int.class),

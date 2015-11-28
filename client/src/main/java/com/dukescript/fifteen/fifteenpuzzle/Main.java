@@ -68,7 +68,7 @@ public final class Main {
                 tiles.add(tile);
             }
         }
-        return new Game(0, 0, false, tiles.toArray(new Tile[16]));
+        return new Game(0, 0, false, false, tiles.toArray(new Tile[16]));
     }
 
 }
