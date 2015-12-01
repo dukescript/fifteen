@@ -141,6 +141,10 @@
                         </resources>
                     </config>
                     <includeJFX>false</includeJFX>
+                    <os>ios</os>
+                    <archs>thumbv7:arm64</archs>
+                    <iosSignIdentity>iPhone Distribution</iosSignIdentity>
+                    <iosProvisioningProfile></iosProvisioningProfile>
                 </configuration>
                 <!--
                 <executions>
