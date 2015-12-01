@@ -120,16 +120,13 @@
             <plugin>
                 <groupId>org.robovm</groupId>
                 <artifactId>robovm-maven-plugin</artifactId>
-                <version>1.0.0-beta-03</version>
+                <version>1.8.0</version>
                 <configuration>
                     <config>
                         <mainClass>${project.mainclass}</mainClass>
                         <forceLinkClasses>
                             <pattern>java.util.logging.ConsoleHandler</pattern>
                             <pattern>java.util.logging.SimpleFormatter</pattern>
-                            <pattern>org.netbeans.html.ko4j.KO4J</pattern>
-                            <pattern>org.netbeans.html.sound.impl.BrowserAudioEnv</pattern>
-                            <pattern>com.dukescript.presenters.iOS</pattern>
                         </forceLinkClasses>
                         <executableName>fifteenpuzzle</executableName>
                         <resources>
