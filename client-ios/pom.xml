@@ -128,7 +128,7 @@
                             <pattern>java.util.logging.ConsoleHandler</pattern>
                             <pattern>java.util.logging.SimpleFormatter</pattern>
                         </forceLinkClasses>
-                        <executableName>fifteenpuzzle</executableName>
+                        <executableName>Fifteen Puzzle</executableName>
                         <resources>
                             <resource>target/web/pages/</resource>
                             <resource>
